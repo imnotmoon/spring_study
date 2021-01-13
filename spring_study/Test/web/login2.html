@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login window</title>
+    <script type="text/javascript">
+        function fn_validate() {
+            var frmLogin = document.frmLogin;
+            var user_id = frmLogin.user_id.value;
+            var user_pw = frmLogin.user_pw.value;
+
+            if((user_id.length == 0 || user_id == "") || (user_pw.length == 0 || user_pw == "")) {
+                alert("id and pw are neccesary");
+            } else {
+                frmLogin.method = "post";
+                frmLogin.action = "/login5";
+                frmLogin.submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="frmLogin" method="post" action="" enctype="UTF-8">
+        ID : <input type="text" name="user_id"> <br>
+        PW : <input type="password" name="user_pw"> <br>
+        <input type="button" onclick="fn_validate()" value="login">
+        <input type="hidden" value="redo">
+    </form>
+
+</body>
+</html>
