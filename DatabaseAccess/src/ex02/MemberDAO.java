@@ -1,4 +1,4 @@
-package ex01;
+package ex02;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -12,13 +12,6 @@ public class MemberDAO {
     private Statement stmt;
     private PreparedStatement pstmt;
     private Connection con;
-//    private String driver = "com.mysql.jdbc.Driver";
-//    private String url = "jdbc:mysql://localhost:3306/DatabaseServlet?serverTimezone=UTC";
-//    private String user = "root";
-//    private String password = "maupas";
-
-//    private Connection con;
-//    private PreparedStatement pstmt;
     private DataSource dataFactory;
 
     public MemberDAO() {
@@ -41,7 +34,7 @@ public class MemberDAO {
             pstmt = con.prepareStatement(query);
             ResultSet rs = pstmt.executeQuery();
 
-            while(rs.next()) {
+            while (rs.next()) {
                 String id = rs.getString("id");
                 String pwd = rs.getString("pwd");
                 String name = rs.getString("name");
@@ -57,28 +50,13 @@ public class MemberDAO {
                 list.add(vo);
             }
             rs.close();
-            stmt.close();
+            pstmt.close();
             con.close();
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return list;
     }
-
-//   Comment out b/o use of Connection Pool
-
-//    private void connDB() {
-//        try {
-//            Class.forName(driver);
-//            System.out.println("Oracle driver loading succeed");
-//            con = DriverManager.getConnection(url, user, password);
-//            System.out.println("Connection genererated Succeed");
-//            stmt = con.createStatement();
-//            System.out.println("Statement generated Succeed");
-//        } catch(Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     public void addMember(ex02.MemberVO memberVO) {
         try{
@@ -91,9 +69,15 @@ public class MemberDAO {
             String query = "insert into t_member";
             query += "(id, pwd, name, email)";
             query += " values(?, ?, ?, ?)";
-            System.out.println("preparedStatement : " + query);
+
             pstmt = con.prepareStatement(query);
-            pstmt.executeQuery();
+            pstmt.setString(1, id);
+            pstmt.setString(2, pwd);
+            pstmt.setString(3, name);
+            pstmt.setString(4, email);
+            System.out.println("preparedStatement222 : " + query);
+
+            pstmt.executeUpdate();
             pstmt.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -101,6 +85,18 @@ public class MemberDAO {
     }
 
     public void delMember(String id) {
+        try{
+            con = dataFactory.getConnection();
 
+            String query = "delete from t_member" + " where id = ?";
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1, id);
+            System.out.println(pstmt);
+            pstmt.executeUpdate();
+            pstmt.close();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -15,14 +15,14 @@ public class MemberServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
         MemberDAO dao = new MemberDAO();
-        List<ex01.MemberVO> list = dao.listMembers();
+        List<ex02.MemberVO> list = dao.listMembers();
 
         out.print("<html><body>");
         out.print("<table border=1><tr align='center' bgcolor='lightgreen'>");
         out.print("<td>ID</td> <td>PW</td> <td>NAME</td> <td>EMAIL</td> <td>JOINDATE</td> </tr>");
 
         for(int i=0; i< list.size(); i++) {
-            ex01.MemberVO memberVO = list.get(i);
+            ex02.MemberVO memberVO = list.get(i);
             String id = memberVO.getId();
             String pwd = memberVO.getPwd();
             String name = memberVO.getName();

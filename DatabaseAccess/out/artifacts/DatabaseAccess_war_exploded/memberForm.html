@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Join</title>
+    <script type="text/javascript">
+        function fn_sendMember() {
+            var frmMember = document.frmMember;
+            var id = frmMember.id.value;
+            var pwd = frmMember.pwd.value;
+            var name = frmMember.name.value;
+            var email = frmMember.email.value;
+
+            // validation
+            if(id.length == 0 || id == "") {
+                alert("ID is neccesary");
+            } else if(pwd.length == 0 || pwd == "") {
+                alert("PWD is neccesary");
+            } else if(name.length == 0 || name == "") {
+                alert("NAME is neccesary");
+            } else if(email.length == 0 || email == "") {
+                alert("EMAIL is neccesary");
+            } else {
+                frmMember.method = "post";
+                frmMember.action = "member3";
+                frmMember.submit();
+            }
+        }
+    </script>
+</head>
+<body>
+<form name="frmMember">
+    <table>
+        <th> USER JOIIN </th>
+
+        <tr>
+            <td>ID</td>
+            <td><input type="text" name="id"> </td>
+        </tr>
+        <tr>
+            <td>PW</td>
+            <td><input type="password" name="pwd"> </td>
+        </tr>
+        <tr>
+            <td>NAME</td>
+            <td><input type="text" name="name"> </td>
+        </tr>
+        <tr>
+            <td>EMAIL</td>
+            <td><input type="text" name="email"> </td>
+        </tr>
+    </table>
+    <input type="button" value="JOIN" onclick="fn_sendMember()">
+    <input type="reset" value="REWRITE">
+    <input type="hidden" name="command" value="addMember" />
+</form>
+</body>
+</html>
