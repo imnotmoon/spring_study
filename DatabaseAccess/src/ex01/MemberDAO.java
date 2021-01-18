@@ -1,5 +1,8 @@
 package ex01;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,15 +12,30 @@ public class MemberDAO {
     private Statement stmt;
     private PreparedStatement pstmt;
     private Connection con;
-    private String driver = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:3306/DatabaseServlet?serverTimezone=UTC";
-    private String user = "root";
-    private String password = "maupas";
+//    private String driver = "com.mysql.jdbc.Driver";
+//    private String url = "jdbc:mysql://localhost:3306/DatabaseServlet?serverTimezone=UTC";
+//    private String user = "root";
+//    private String password = "maupas";
+
+//    private Connection con;
+//    private PreparedStatement pstmt;
+    private DataSource dataFactory;
+
+    public MemberDAO() {
+        try {
+            Context ctx = new InitialContext();
+            Context envContext = (Context) ctx.lookup("java:/comp/env");
+            dataFactory = (DataSource) envContext.lookup("jdbc/mysql");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public List<ex01.MemberVO> listMembers() {
         List<ex01.MemberVO> list = new ArrayList<ex01.MemberVO>();
         try {
-            connDB();
+//            connDB();
+            con = dataFactory.getConnection();
             String query = "select * from t_member";
             System.out.println("prepared statement : " + query);
             pstmt = con.prepareStatement(query);
@@ -47,16 +65,18 @@ public class MemberDAO {
         return list;
     }
 
-    private void connDB() {
-        try {
-            Class.forName(driver);
-            System.out.println("Oracle driver loading succeed");
-            con = DriverManager.getConnection(url, user, password);
-            System.out.println("Connection genererated Succeed");
-            stmt = con.createStatement();
-            System.out.println("Statement generated Succeed");
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
+//   Comment out b/o use of Connection Pool
+
+//    private void connDB() {
+//        try {
+//            Class.forName(driver);
+//            System.out.println("Oracle driver loading succeed");
+//            con = DriverManager.getConnection(url, user, password);
+//            System.out.println("Connection genererated Succeed");
+//            stmt = con.createStatement();
+//            System.out.println("Statement generated Succeed");
+//        } catch(Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
