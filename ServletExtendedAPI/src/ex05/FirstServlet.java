@@ -1,5 +1,6 @@
-package ex04;
+package ex05;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,17 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-//@WebServlet(name = "SecondServlet", value = "/second")
-public class SecondServlet extends HttpServlet {
+//@WebServlet(name = "FirstServlet", value = "/first")
+public class FirstServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=utf-8");
-        String name = request.getParameter("name");
         PrintWriter out = response.getWriter();
-        out.print("<html><body>");
-        out.print("Example of redirection with Dispatch <br>");
-        out.print("name : " + name);
-        out.print("</body></html");
+
+        // Binding with setAttribute()
+        request.setAttribute("address", "songpa-gu, Seoul");
+        response.sendRedirect("second");
     }
 
     @Override
