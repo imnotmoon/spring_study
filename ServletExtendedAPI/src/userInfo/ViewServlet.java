@@ -19,7 +19,7 @@ public class ViewServlet extends HttpServlet {
 
         out.print("<html><body>");
         out.print("<table border=1> <tr align='center' bgcolor='lightgreen'>");
-        out.print("<td>ID</td> <td>PW</td> <td>NAME</td> <td>EMAIL</td> <td>JOINDATE</td>  <td>DELETE</td></tr>");
+        out.print("<td>ID</td> <td>NAME</td> <td>EMAIL</td> <td>JOINDATE</td>  <td>DELETE</td></tr>");
 
         for(int i=0; i<memberList.size(); i++) {
             MemberVO vo = (MemberVO) memberList.get(i);

@@ -3,5 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <context-param>
+        <param-name>menu_member</param-name>
+        <param-value>userRegistration userLookup userEdit</param-value>
+    </context-param>
+    <context-param>
+        <param-name>menu_order</param-name>
+        <param-value>orderLookup orderRegistration orderEdit orderCancel</param-value>
+    </context-param>
+    <context-param>
+        <param-name>menu_goods</param-name>
+        <param-value>goodsLookup goodsRegistration goodsEdit goodsEdit</param-value>
+    </context-param>
 
 </web-app>
