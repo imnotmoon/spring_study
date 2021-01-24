@@ -15,5 +15,12 @@
         <param-name>menu_goods</param-name>
         <param-value>goodsLookup goodsRegistration goodsEdit goodsEdit</param-value>
     </context-param>
+    
+    <servlet>
+        <servlet-name>loadConfig</servlet-name>
+        <servlet-class>loadOnStartUp.LoadAppConfig</servlet-class>
+        <load-on-startup>1</load-on-startup>
+
+    </servlet>
 
 </web-app>
