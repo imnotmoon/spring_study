@@ -6,8 +6,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-//@WebServlet(name = "TestServlet3", value = "*.do")
-@WebServlet(name = "TestServlet3", value = "/*")
+@WebServlet(name = "TestServlet3", value = "*.do")
+//@WebServlet(name = "TestServlet3", value = "/*")
 public class TestServlet3 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
