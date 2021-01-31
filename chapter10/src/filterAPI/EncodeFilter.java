@@ -5,7 +5,7 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter(filterName = "EncodeFilter", value = "/*")
+//@WebFilter(filterName = "EncodeFilter", value = "/*")
 public class EncodeFilter implements Filter {
 
     ServletContext context;
@@ -37,6 +37,7 @@ public class EncodeFilter implements Filter {
 
         // 10.3.4 : to get response time
         long end = System.currentTimeMillis();
+        response.setContentType("text/html;charset=utf-8");
         System.out.println("Response Time : " + (end-begin) + "ms");
     }
 }
