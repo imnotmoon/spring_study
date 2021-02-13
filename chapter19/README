@@ -1,0 +1,7 @@
+intellij에서 Spring 프로젝트 실습하는법
+혹시 까먹을까봐 적어둔다.
+
+- 프로젝트 생성할때 Maven이나 Gradle로 하면 안된다 패키지 생성이 안된다.
+
+1. Spring Initializer로 프로젝트 생성
+2. 나는 JDK가 15니까 15로 했음
