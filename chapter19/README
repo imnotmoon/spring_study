@@ -5,3 +5,4 @@ intellij에서 Spring 프로젝트 실습하는법
 
 1. Spring Initializer로 프로젝트 생성
 2. 나는 JDK가 15니까 15로 했음
+3. xml은 루트 바로 아래에. Spring xml로 생성하면 된다.
