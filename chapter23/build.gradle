@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '3.0.6.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context-support', version: '3.0.6.RELEASE'
+    compile group:'javax.servlet', name:'javax.servlet-api', version:'3.1.0'
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+    compile("org.springframework:spring-jdbc:+")
+    compile("commons-dbcp:commons-dbcp:+")
+    compile("mysql:mysql-connector-java:5.0.8")
+    // https://mvnrepository.com/artifact/org.mybatis/mybatis
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.5.4'
+    // https://mvnrepository.com/artifact/org.mybatis/mybatis-spring
+    compile group: 'org.mybatis', name: 'mybatis-spring', version: '2.0.4'
+    // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+    compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.2.RELEASE'
+}
+
+test {
+    useJUnitPlatform()
+}

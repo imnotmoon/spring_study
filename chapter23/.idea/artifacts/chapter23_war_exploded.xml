@@ -1,0 +1,45 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="chapter23:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/chapter23_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="chapter23/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="chapter23" />
+          <element id="module-output" name="chapter23.main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Gradle: commons-pool:commons-pool:1.5.4" />
+          <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:5.0.8" />
+          <element id="library" level="project" name="Gradle: org.mybatis:mybatis-spring:2.0.4" />
+          <element id="library" level="project" name="Gradle: org.mybatis:mybatis:3.5.4" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-asm:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:5.3.4" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context-support:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.3.4" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jcl:5.3.4" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:5.3.4" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-tx:5.3.4" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-web:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:3.0.6.RELEASE" />
+          <element id="library" level="project" name="mybatis-3.5.61" />
+          <element id="library" level="project" name="Gradle: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Gradle: junit:junit:4.11" />
+          <element id="library" level="project" name="Gradle: org.apiguardian:apiguardian-api:1.1.0" />
+          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.6.0" />
+          <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.6.0" />
+          <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-commons:1.6.0" />
+          <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-engine:1.6.0" />
+          <element id="library" level="project" name="Gradle: org.opentest4j:opentest4j:1.2.0" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
